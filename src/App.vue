@@ -4,6 +4,7 @@
       <a href="#/ref01">ref01</a>
       <a href="#/ref02">ref02</a>
       <a href="#/ref03">ref03</a>
+      <a href="#/upload">upload</a>
     </div>
     <router-view/>
   </div>

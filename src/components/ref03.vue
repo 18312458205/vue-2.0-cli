@@ -18,7 +18,6 @@ export default {
     }
   },
   mounted: function () {
-    debugger
     this.aaa()
     console.log(this.a)
   }
