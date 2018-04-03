@@ -4,6 +4,7 @@ import ref01 from '@/components/ref01'
 import ref02 from '@/components/ref02'
 import ref03 from '@/components/ref03'
 import upload from '@/components/upload'
+import photo from '@/components/photo'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/upload',
       name: 'upload',
       component: upload
+    },
+    {
+      path: '/photo',
+      name: 'photo',
+      component: photo
     }
   ]
 })

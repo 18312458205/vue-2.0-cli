@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <div id="list">
+    <div>
       <a href="#/ref01">ref01</a>
       <a href="#/ref02">ref02</a>
       <a href="#/ref03">ref03</a>
       <a href="#/upload">upload</a>
+      <a href="#/photo">photo</a>
     </div>
     <router-view/>
   </div>
@@ -17,7 +18,5 @@ export default {
 </script>
 
 <style scoped>
-#list{
-  border: 1px solid red;
-}
+
 </style>

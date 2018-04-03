@@ -1,4 +1,4 @@
-<template>
+7<template>
   <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" :onSuccess="uploadSuccess" :beforeUpload="beforeAvatarUpload"  :file-list="fileList3" >
     <el-button size="small" type="primary">点击上传</el-button>
     <div slot="tip" class="el-upload__tip">上传模板只能是 xls、xlsx、doc、docx 格式!且不超过1MB</div>
