@@ -5,7 +5,8 @@
       <a href="#/ref02">ref02</a>
       <a href="#/ref03">ref03</a>
       <a href="#/upload">upload</a>
-      <a href="#/photo">photo</a>
+      <a href="#/photo1">photo1</a>
+      <a href="#/uploadphoto">uploadphoto</a>
     </div>
     <router-view/>
   </div>
