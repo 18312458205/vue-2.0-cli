@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     chilFn: function (msg) {
-      alert(msg)
+      
     }
   }
 }
