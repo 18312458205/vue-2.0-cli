@@ -11,6 +11,7 @@ export default {
   },
   methods: {
     chilFn: function (msg) {
+      alert(ms1g)
       
     }
   }
