@@ -5,6 +5,8 @@ import ref02 from '@/components/ref02'
 import ref03 from '@/components/ref03'
 import upload from '@/components/upload'
 import uploadphoto from '@/components/uploadphoto'
+import dragdrop from '@/components/dragdrop'
+import vuex from '@/components/vuex'
 
 Vue.use(Router)
 
@@ -34,6 +36,16 @@ export default new Router({
       path: '/uploadphoto',
       name: 'uploadphoto',
       component: uploadphoto
+    },
+    {
+      path: '/dragdrop',
+      name: 'dragdrop',
+      component: dragdrop
+    },
+    {
+      path: '/vuex',
+      name: 'vuex',
+      component: vuex
     }
   ]
 })

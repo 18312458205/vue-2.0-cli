@@ -1,0 +1,7 @@
+const INCERMENT = 'INCERMENT'
+const DECERMENT = 'DECERMENT'
+
+export default {
+  INCERMENT,
+  DECERMENT
+}

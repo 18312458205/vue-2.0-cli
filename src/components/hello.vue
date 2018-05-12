@@ -7,11 +7,24 @@ export default {
   name: 'hello',
   data () {
     return {
+      d: '6'
     }
   },
   methods: {
     chilFn: function (msg) {
-      alert(ms2g) 
+      alert(msg)
+    },
+    mounted: function () {
+      function runAsync () {
+        var p = new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            console.log('执行完成')
+            resolve('随便什么数据')
+          }, 500)
+        })
+        return p
+      }
+      runAsync()
     }
   }
 }

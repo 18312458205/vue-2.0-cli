@@ -7,6 +7,8 @@
       <a href="#/upload">upload</a>
       <a href="#/photo1">photo1</a>
       <a href="#/uploadphoto">uploadphoto</a>
+      <a href="#/dragdrop">dragdrop</a>
+      <a href="#/vuex">vuex</a>
     </div>
     <router-view/>
   </div>

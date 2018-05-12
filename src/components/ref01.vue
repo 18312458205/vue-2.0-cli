@@ -9,9 +9,7 @@
 export default {
   name: 'ref01',
   data () {
-    return {
-
-    }
+    return {}
   },
   methods: {
     add: function () {

@@ -1,7 +1,7 @@
 <template>
   <div>
-      <input type="button" @click="parentCall" value="父调子" />
-      <hello ref="chil">hello组件</hello>
+    <input type="button" @click="parentCall" value="父调子" />
+    <hello ref="chil">hello组件</hello>
   </div>
 </template>
 
@@ -10,11 +10,10 @@ import hello from './Hello'
 export default {
   name: 'ref02',
   data () {
-    return {
-    }
+    return {}
   },
   components: {
-    'hello': hello
+    hello: hello
   },
   methods: {
     parentCall: function () {
