@@ -12,7 +12,7 @@ export default {
   name: 'vuex',
   data () {
     return {
-      num1: 0
+
     }
   },
   // 方式1：通过this.$store.state
@@ -26,17 +26,11 @@ export default {
       'count'
     ])
   },
-  mounted () {
-    this.num1 = sessionStorage.getItem('testKey')
-  },
   methods: {
     ...mapActions([
       'increment',
       'decrement'
-    ]),
-    handleChange () {
-      sessionStorage.setItem('testKey', ++this.num1)
-    }
+    ])
   }
 }
 </script>
