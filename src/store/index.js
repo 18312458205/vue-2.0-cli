@@ -5,12 +5,16 @@ import type from './mutations-types'
 Vue.use(Vuex)
 
 var state = {
-  count: 6
+  count: 6,
+  userinfo: ''
 }
 
 var getters = {
   count: state => {
     return state.count
+  },
+  userinfo: state => {
+    return state.userinfo
   }
 }
 
@@ -22,6 +26,9 @@ const actions = {
     if (state.count > 10) {
       commit(type.DECERMENT)
     }
+  },
+  setUserInfo ({ commit }, userinfo) {
+    commit('SET_USERINFO', userinfo)
   }
 }
 
@@ -33,6 +40,9 @@ const mutations = {
   [type.DECERMENT] (state) {
     // 变更状态
     state.count--
+  },
+  SET_USERINFO (state, user) {
+    state.userinfo = user
   }
 }
 

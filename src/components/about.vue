@@ -1,0 +1,52 @@
+<template>
+  <div class="about">
+    <div class="title">关于我</div>
+    <div class="haoyou">添加好友</div>
+    <div>
+      <img src="../img/weixin.jpg">
+    </div>
+    <div class="pay">打赏一下</div>
+    <div>
+      <img src="../img/zhifu.jpg">
+    </div>
+    <div>
+      Github:
+      <a href="https://github.com/18312458205">https://github.com/18312458205</a>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+    }
+  },
+  created () {
+
+  },
+  methods: {
+    submitForm (formName) {
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+* {
+  box-sizing: border-box;
+}
+.about {
+  text-align: center;
+}
+.title {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.haoyou,
+.pay {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+</style>
