@@ -4,17 +4,25 @@ import type from './mutations-types'
 
 Vue.use(Vuex)
 
-var state = {
+const state = {
   count: 6,
-  userinfo: ''
+  userInfo: null,
+  token: '',
+  isLogin: false
 }
 
-var getters = {
+const getters = {
   count: state => {
     return state.count
   },
-  userinfo: state => {
-    return state.userinfo
+  userInfo: state => {
+    return state.userInfo
+  },
+  token: state => {
+    return state.token
+  },
+  isLogin: state => {
+    return state.isLogin
   }
 }
 
@@ -27,8 +35,11 @@ const actions = {
       commit(type.DECERMENT)
     }
   },
-  setUserInfo ({ commit }, userinfo) {
-    commit('SET_USERINFO', userinfo)
+  setLogin ({ commit }, login) {
+    commit('SET_LOGIN', login)
+  },
+  out ({ commit }, out) {
+    commit('SET_OUT', out)
   }
 }
 
@@ -41,8 +52,15 @@ const mutations = {
     // 变更状态
     state.count--
   },
-  SET_USERINFO (state, user) {
-    state.userinfo = user
+  SET_LOGIN (state, login) {
+    state.userInfo = login.userInfo
+    state.token = login.token
+    state.isLogin = login.isLogin
+  },
+  SET_OUT (state, out) {
+    state.userInfo = out.userInfo
+    state.token = out.token
+    state.isLogin = out.isLogin
   }
 }
 

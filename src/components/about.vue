@@ -1,13 +1,8 @@
 <template>
   <div class="about">
     <div class="title">关于我</div>
-    <div class="haoyou">添加好友</div>
     <div>
       <img src="../img/weixin.jpg">
-    </div>
-    <div class="pay">打赏一下</div>
-    <div>
-      <img src="../img/zhifu.jpg">
     </div>
     <div>
       Github:
@@ -43,10 +38,5 @@ export default {
 .title {
   font-size: 30px;
   font-weight: bolder;
-}
-.haoyou,
-.pay {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 </style>

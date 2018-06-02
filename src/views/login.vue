@@ -55,29 +55,29 @@ export default {
   },
   methods: {
     ...mapActions([
-      'setUserInfo'
+      'setUserInfo',
+      'setToken',
+      'setIslogin'
     ]),
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           login(qs.stringify(this.ruleForm2)).then((res) => {
-            // 如果用户名和密码在数据库中可以找到,后台返回字符串'00000'
             if (res.data.code === '0000') {
-              console.log('登陆成功')
-              if (res.data.token) {
-                // 储存 token
-                localStorage.setItem('photo', res.data.data.photo)
-                localStorage.setItem('username', res.data.data.username)
-                localStorage.setItem('token', res.data.token)
-                this.$store.dispatch('setUserInfo', res.data)
-                this.$router.push('/home')
-              }
               this.$message({
                 message: '登陆成功',
                 type: 'success'
               })
+              if (res.data.token) {
+                let userInfo = res.data.data
+                let token = res.data.token
+                let isLogin = true
+                localStorage.setItem('userInfo', JSON.stringify(userInfo))
+                localStorage.setItem('token', token)
+                localStorage.setItem('isLogin', isLogin)
+                this.$router.push('/home')
+              }
             } else {
-              // 反之后台返回字符串'0001'
               this.$message({
                 message: '用户名或密码错误',
                 type: 'warning'

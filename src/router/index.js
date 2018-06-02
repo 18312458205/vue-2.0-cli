@@ -12,15 +12,48 @@ export default new Router({
     {
       path: '/login',
       component: resolve =>
-        require(['@/components/login'], resolve)
+        require(['@/views/login'], resolve)
     },
     {
       path: '/home',
       meta: {
         requireAuth: true
       },
+      redirect: '/home/page101',
       component: resolve =>
-        require(['@/components/home'], resolve)
+        require(['@/views/home'], resolve),
+      children: [
+        {
+          path: 'page101',
+          name: '导航101',
+          component: resolve =>
+            require(['@/views/page101'], resolve)
+        },
+        {
+          path: 'page102',
+          name: '导航102',
+          component: resolve =>
+            require(['@/views/page102'], resolve)
+        },
+        {
+          path: 'page2',
+          name: '导航2',
+          component: resolve =>
+            require(['@/views/page2'], resolve)
+        },
+        {
+          path: 'page3',
+          name: '导航3',
+          component: resolve =>
+            require(['@/views/page3'], resolve)
+        },
+        {
+          path: 'page4',
+          name: '导航4',
+          component: resolve =>
+            require(['@/views/page4'], resolve)
+        }
+      ]
     },
     {
       path: '/about',
