@@ -1,21 +1,27 @@
 <template>
-  <div>
-    导航101
+  <div class="about">
+    <div>
+      <img src="../img/weixin.jpg">
+    </div>
+    <div>
+      Github:
+      <a href="https://github.com/18312458205">https://github.com/18312458205</a>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'page101',
   data () {
     return {
     }
   },
-  computed: {
-  },
   created () {
+
   },
   methods: {
+    submitForm (formName) {
+    }
   }
 }
 </script>
@@ -24,5 +30,8 @@ export default {
 <style scoped>
 * {
   box-sizing: border-box;
+}
+.about {
+  text-align: center;
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    导航2
+    导航202
   </div>
 </template>
 
 <script>
 export default {
-  name: 'page2',
+  name: 'page202',
   data () {
     return {
     }

@@ -1,11 +1,10 @@
 <template>
   <div>
     <el-breadcrumb class="bread" separator="/">
-      <el-breadcrumb-item>{{$route.name}}</el-breadcrumb-item>
-      <!-- <el-breadcrumb-item>首页</el-breadcrumb-item>
-      <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
+      <el-breadcrumb-item :to="{ path: '/home/page1' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item v-for='(item,index) in levelList' :key='index'>
+        {{item}}
+      </el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>
@@ -15,14 +14,42 @@ export default {
   name: 'myBreadcrumb',
   data () {
     return {
-      breadcrumbItems: []
+      levelList: null
     }
   },
   computed: {
   },
   created () {
+    this.getBreadcrumb()
   },
   methods: {
+    getBreadcrumb () {
+      let matched = this.$route.path
+      let n = matched.lastIndexOf('/')
+      let m = matched.substr(n + 1)
+      switch (m) {
+        case 'page1':
+          this.levelList = ['设置']
+          break
+        case 'page201':
+          this.levelList = ['导航2', '导航201']
+          break
+        case 'page202':
+          this.levelList = ['导航2', '导航202']
+          break
+        case 'page3':
+          this.levelList = ['导航3']
+          break
+        case 'page4':
+          this.levelList = ['导航4']
+          break
+      }
+    }
+  },
+  watch: {
+    $route () {
+      this.getBreadcrumb()
+    }
   }
 }
 </script>
