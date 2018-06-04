@@ -17,21 +17,11 @@
 import myHeader from './myHeader.vue'
 import myAside from './myAside.vue'
 import myBreadcrumb from './myBreadcrumb.vue'
-import page201 from './page201.vue'
-import page202 from './page202.vue'
-import page1 from './page1.vue'
-import page3 from './page3.vue'
-import page4 from './page4.vue'
 export default {
   components: {
     myHeader,
     myAside,
-    myBreadcrumb,
-    page201,
-    page202,
-    page1,
-    page3,
-    page4
+    myBreadcrumb
   },
   data () {
     return {
@@ -63,19 +53,16 @@ export default {
   right: 0;
   top: 60px;
   bottom: 0;
-  /* display: flex; */
   height: 100%;
 }
 .left {
-  /* flex: 0 0 200px; */
   float: left;
-  width: 200px;
+  width: 199px;
   height: 100%;
   background-color: rgb(84, 92, 100);
 }
 .right {
-  /* flex: 1 1 auto; */
-  margin-left: 200px;
+  margin-left: 199px;
   height: 100%;
 }
 </style>

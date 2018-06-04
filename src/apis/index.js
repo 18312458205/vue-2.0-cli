@@ -12,6 +12,14 @@ export const search = data => {
   return axios({
     method: 'get',
     url: '/api/search.php',
+    params: data
+  })
+}
+
+export const qdelete = data => {
+  return axios({
+    method: 'post',
+    url: '/api/delete.php',
     data
   })
 }

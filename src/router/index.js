@@ -29,12 +29,12 @@ export default new Router({
             require(['@/views/page1'], resolve)
         },
         {
-          path: 'page201',
+          path: '/home/page2/page201',
           component: resolve =>
             require(['@/views/page201'], resolve)
         },
         {
-          path: 'page202',
+          path: '/home/page2/page202',
           component: resolve =>
             require(['@/views/page202'], resolve)
         },

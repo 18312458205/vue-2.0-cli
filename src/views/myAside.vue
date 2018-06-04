@@ -11,8 +11,8 @@
             <i class="el-icon-setting"></i>
             <span>导航2</span>
           </template>
-          <el-menu-item index="/home/page201">导航201</el-menu-item>
-          <el-menu-item index="/home/page202">导航202</el-menu-item>
+          <el-menu-item index="/home/page2/page201">导航201</el-menu-item>
+          <el-menu-item index="/home/page2/page202">导航202</el-menu-item>
         </el-submenu>
         <el-menu-item index="/home/page3">
           <i class="el-icon-setting"></i>

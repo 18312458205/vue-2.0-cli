@@ -8,6 +8,8 @@
       <el-table border ref="multipleTable" :data="tableData4" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55">
         </el-table-column>
+        <el-table-column prop="id" label="编号" width="120">
+        </el-table-column>
         <el-table-column label="日期" width="120">
           <template slot-scope="scope">{{ scope.row.date }}</template>
         </el-table-column>
@@ -17,13 +19,13 @@
         </el-table-column>
         <el-table-column fixed="right" label="操作" width="150">
           <template slot-scope="scope">
-            <el-button @click="openDialog" type="primary" size="small">编辑</el-button>
-            <el-button type="danger" size="small">删除</el-button>
+            <el-button @click="handleClick(scope.row)" type="primary" size="small">编辑</el-button>
+            <el-button @click="handleClick(scope.row)" type="danger" size="small">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
       <div class="block">
-        <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage4" :page-sizes="[20, 30]" :page-size="20" layout="total, sizes, prev, pager, next, jumper" :total="400">
+        <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage" :page-sizes="[4, 5]" :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper" :total="totalRecord">
         </el-pagination>
       </div>
     </div>
@@ -32,8 +34,9 @@
 </template>
 
 <script>
-import { search } from '../apis/index.js'
+import { search, qdelete } from '../apis/index.js'
 import pop from './pop.vue'
+import qs from 'qs'
 export default {
   name: 'page201',
   components: {
@@ -41,74 +44,71 @@ export default {
   },
   data () {
     return {
-      tableData3: [{
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-08',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-06',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-07',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }],
       tableData4: [],
       multipleSelection: [],
-      currentPage4: 1
+      currentPage: 1,
+      pageSize: 4,
+      totalRecord: 0,
+      id: null
     }
   },
   computed: {
   },
   created () {
-    this.aaa()
+    this.search()
   },
   methods: {
+    handleClick (row) {
+      console.log(row)
+      this.id = row.id
+      console.log(this.id)
+      qdelete(qs.stringify({ id: this.id }))
+        .then((res) => {
+          this.$message({
+            message: '删除成功',
+            type: 'success'
+          })
+          this.search()
+        })
+        .catch(err => {
+          console.warn(err)
+        })
+    },
     handleSizeChange (val) {
       console.log(`每页 ${val} 条`)
+      this.pageSize = val
+      this.search()
     },
     handleCurrentChange (val) {
       console.log(`当前页: ${val}`)
+      this.currentPage = val
+      this.search()
     },
-    toggleSelection (rows) {
-      if (rows) {
-        rows.forEach(row => {
-          this.$refs.multipleTable.toggleRowSelection(row)
-        })
-      } else {
-        this.$refs.multipleTable.clearSelection()
-      }
-    },
+    // toggleSelection (rows) {
+    //   if (rows) {
+    //     rows.forEach(row => {
+    //       this.$refs.multipleTable.toggleRowSelection(row)
+    //     })
+    //   } else {
+    //     this.$refs.multipleTable.clearSelection()
+    //   }
+    // },
     handleSelectionChange (val) {
+      console.log(val)
       this.multipleSelection = val
     },
     openDialog () {
       this.$refs.dialog.dialogVisible = true
     },
-    aaa () {
-      search().then((res) => {
-        console.log(res.data)
-        this.tableData4 = res.data
-      }).catch(err => {
-        console.warn(err)
-      })
+    search () {
+      search({ pageNum: this.currentPage, pageSize: this.pageSize })
+        .then((res) => {
+          this.tableData4 = res.data.data
+          this.totalRecord = res.data.totalRecord
+        })
+        .catch(err => {
+          console.warn(err)
+        })
     }
   }
 }
