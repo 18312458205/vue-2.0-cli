@@ -21,3 +21,5 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 >线上地址：http://2.vueadminfront.applinzi.com/dist/#/login
+
+![Image text](https://github.com/18312458205/vue-2.0-cli/blob/master/src/show-img/Snipaste_2018-06-04_22-40-16.png)
