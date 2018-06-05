@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import 'babel-polyfill'
+import echarts from 'echarts'
 import Axios from '@/js/AxiosPlugin'
 import store from './store/index.js'
 import './css/reset.css'
@@ -14,6 +15,7 @@ Vue.use(ElementUI)
 // eslint-disable-next-line
 // import './mocks/mock.js'
 
+Vue.prototype.$echarts = echarts
 Vue.prototype.$axios = Axios
 
 Vue.config.productionTip = false
