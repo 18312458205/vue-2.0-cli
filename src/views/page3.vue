@@ -85,6 +85,9 @@ export default {
 * {
   box-sizing: border-box;
 }
+.charts{
+  overflow: hidden;
+}
 #myChart {
   float: left;
   width: 50%;
