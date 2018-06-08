@@ -22,5 +22,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 >线上地址：http://2.vueadminfront.applinzi.com/dist/#/login
 
+## 介绍
+### 登陆
 ![Image text](https://github.com/18312458205/vue-2.0-cli/blob/master/src/show-img/Snipaste_2018-06-04_22-40-16.png)
+### 表格、分页
 ![Image text](https://github.com/18312458205/vue-2.0-cli/blob/master/src/show-img/Snipaste_2018-06-04_22-48-47.png)
+### 图表
+![Image text](https://github.com/18312458205/vue-2.0-cli/blob/master/src/show-img/Snipaste_2018-06-05_23-48-21.png)
