@@ -1,6 +1,5 @@
 <template>
   <div>
-    <el-aside width=" 200px ">
       <el-menu  :default-active="$route.path" :router="true" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
         <el-menu-item index="/home/page1">
           <i class="el-icon-setting"></i>
@@ -23,7 +22,6 @@
           <span slot="title">导航4</span>
         </el-menu-item>
       </el-menu>
-    </el-aside>
   </div>
 </template>
 

@@ -8,6 +8,9 @@
 </template>
 
 <script>
+var echarts = require('echarts')
+require('echarts/lib/chart/pie')
+require('echarts/lib/chart/bar')
 export default {
   name: 'page3',
   data () {
@@ -68,9 +71,9 @@ export default {
   computed: {
   },
   mounted () {
-    let myChart = this.$echarts.init(document.getElementById('myChart'))
+    let myChart = echarts.init(document.getElementById('myChart'))
     myChart.setOption(this.options)
-    let myChart2 = this.$echarts.init(document.getElementById('myChart2'))
+    let myChart2 = echarts.init(document.getElementById('myChart2'))
     myChart2.setOption(this.options2)
   },
   created () {
@@ -85,7 +88,7 @@ export default {
 * {
   box-sizing: border-box;
 }
-.charts{
+.charts {
   overflow: hidden;
 }
 #myChart {

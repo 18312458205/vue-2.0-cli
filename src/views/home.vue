@@ -14,14 +14,17 @@
 </template>
 
 <script>
-import myHeader from './myHeader.vue'
-import myAside from './myAside.vue'
-import myBreadcrumb from './myBreadcrumb.vue'
+// import myHeader from './myHeader.vue'
+// import myAside from './myAside.vue'
+// import myBreadcrumb from './myBreadcrumb.vue'
 export default {
   components: {
-    myHeader,
-    myAside,
-    myBreadcrumb
+    myHeader: resolve => { require(['./myHeader.vue'], resolve) },
+    myAside: resolve => { require(['./myAside.vue'], resolve) },
+    myBreadcrumb: resolve => { require(['./myBreadcrumb.vue'], resolve) }
+    // myHeader,
+    // myAside,
+    // myBreadcrumb
   },
   data () {
     return {

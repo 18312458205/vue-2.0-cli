@@ -3,19 +3,69 @@
 import Vue from 'vue'
 import App from './App'
 import 'babel-polyfill'
-import echarts from 'echarts'
+// import echarts from 'echarts'
 import Axios from '@/js/AxiosPlugin'
 import store from './store/index.js'
 import './css/reset.css'
-import ElementUI from 'element-ui'
+// import ElementUI from 'element-ui'
+import {
+  Pagination,
+  Dialog,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Menu,
+  Submenu,
+  MenuItem,
+  MenuItemGroup,
+  Input,
+  InputNumber,
+  Button,
+  ButtonGroup,
+  Table,
+  TableColumn,
+  DatePicker,
+  TimeSelect,
+  TimePicker,
+  Breadcrumb,
+  BreadcrumbItem,
+  Form,
+  FormItem,
+  MessageBox,
+  Message
+} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import router from './router/index.js'
-Vue.use(ElementUI)
+// Vue.use(ElementUI)
+Vue.use(Pagination)
+Vue.use(Dialog)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+Vue.use(Menu)
+Vue.use(Submenu)
+Vue.use(MenuItem)
+Vue.use(MenuItemGroup)
+Vue.use(Input)
+Vue.use(InputNumber)
+Vue.use(Button)
+Vue.use(ButtonGroup)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(DatePicker)
+Vue.use(TimeSelect)
+Vue.use(TimePicker)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Form)
+Vue.use(FormItem)
 
 // eslint-disable-next-line
 // import './mocks/mock.js'
 
-Vue.prototype.$echarts = echarts
+// Vue.prototype.$echarts = echarts
+Vue.prototype.$confirm = MessageBox.confirm
+Vue.prototype.$message = Message
 Vue.prototype.$axios = Axios
 
 Vue.config.productionTip = false

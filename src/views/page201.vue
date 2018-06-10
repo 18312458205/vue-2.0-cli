@@ -19,8 +19,9 @@
         </el-table-column>
         <el-table-column fixed="right" label="操作" width="150">
           <template slot-scope="scope">
-            <el-button  type="primary" size="small">编辑</el-button>
-            <el-button @click="handleClick(scope.row)" type="danger" size="small">删除</el-button>
+            <el-button @click="openDialog" type="primary" size="small">编辑</el-button>
+            <el-button type="danger" size="small">删除</el-button>
+            <!-- <el-button @click="handleClick(scope.row)" type="danger" size="small">删除</el-button> -->
           </template>
         </el-table-column>
       </el-table>
@@ -36,12 +37,13 @@
 
 <script>
 import { search, qdelete } from '../apis/index.js'
-import pop from './pop.vue'
+// import pop from './pop.vue'
 import qs from 'qs'
 export default {
   name: 'page201',
   components: {
-    pop
+    pop: resolve => { require(['./pop.vue'], resolve) }
+    // pop
   },
   data () {
     return {
@@ -85,15 +87,6 @@ export default {
       this.currentPage = val
       this.search()
     },
-    // toggleSelection (rows) {
-    //   if (rows) {
-    //     rows.forEach(row => {
-    //       this.$refs.multipleTable.toggleRowSelection(row)
-    //     })
-    //   } else {
-    //     this.$refs.multipleTable.clearSelection()
-    //   }
-    // },
     handleSelectionChange (val) {
       console.log(val)
       this.multipleSelection = val
